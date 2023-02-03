@@ -39,5 +39,5 @@ for ip in IPs:
     child.sendline('no ip ssh server authenticate user keyboard')
     child.expect(PROMPT)
     child.sendline('exit')
-    print(f'configure ssh on {ip} completed.')
+    print(f'configure ssh public key authentication on {ip} completed.')
 print("All done!!!")
