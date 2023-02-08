@@ -24,6 +24,8 @@ time.sleep(1)
 
 tn.write(b"ip addr 172.31.102.17 255.255.255.240\n")
 time.sleep(1)
+tn.write(b"no shut\n")
+time.sleep(1)
 
 tn.write(b"do show ip int br\n")
 time.sleep(2)
