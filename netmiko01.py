@@ -19,4 +19,8 @@ with ConnectHandler(**device_params) as ssh:
     print(result)
     result = ssh.send_command('show int description')
     print(result)
+    result = ssh.send_command('show ip route vrf management | include ^C')
+    print(result)
+    result = ssh.send_command('show ip route vrf control-data | include ^C')
+    print(result)
 
