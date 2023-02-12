@@ -7,8 +7,10 @@ def get_int_brief(device_params):
 
 def get_route(device_params):
     with ConnectHandler(**device_params) as ssh:
-        manage_route = ssh.send_command(f'show ip route vrf management | include ^C')
-        data_route = ssh.send_command(f'show ip route vrf control-data | include ^C')
+        manage_route = ssh.send_command(f'show ip route vrf management \
+            | include ^C')
+        data_route = ssh.send_command(f'show ip route vrf control-data \
+            | include ^C')
         return manage_route + "\n" + data_route
 
 def get_int_des(device_params, int_name):
@@ -29,7 +31,8 @@ def get_netmask(device_params, int_name):
     result = route.strip().split('\n')
     for line in result[1:]:
         words = line.split()
-        if words[0] == 'C' and words[-1][0] == int_name[0] and words[-1][-3:] == int_name[1:]:
+        if words[0] == 'C' and words[-1][0] == int_name[0] \
+        and words[-1][-3:] == int_name[1:]:
             netmask = words[1].split('/')[1]
             return netmask
 
