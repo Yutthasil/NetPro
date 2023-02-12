@@ -1,8 +1,8 @@
 from netmiko import *
-from netmikolab01 import get_ip
-from netmikolab01 import get_netmask
-from netmikolab01 import get_des
-from netmikolab01 import get_status
+from netmikolab import get_ip
+from netmikolab import get_netmask
+from netmikolab import get_des
+from netmikolab import get_status
 
 devices_ip = ['172.31.102.4', '172.31.102.5', '172.31.102.6']
 username = 'admin'
