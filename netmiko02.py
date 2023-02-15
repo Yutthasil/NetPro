@@ -1,4 +1,5 @@
 from netmiko import ConnectHandler
+from jinja2 import Template
 
 devices_ip = ['172.31.102.4', '172.31.102.5', '172.31.102.6']
 username = 'admin'
@@ -15,6 +16,7 @@ for device_ip in devices_ip:
     with ConnectHandler(**device_params) as ssh:
         config_file = f"config/{device_ip}.config" #config/{device_ip}.config
         result = ssh.send_config_from_file(config_file=config_file)
+        ssh.send_config_set()
         print(result)
 
         result = ssh.save_config()
