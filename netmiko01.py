@@ -2,7 +2,7 @@ from netmiko import ConnectHandler
 
 device_ip = input("Insert Device IP address: ")
 username = 'admin'
-pri_key = '/home/devasc/.ssh/id_rsa'
+pri_key = 'id_rsa'
 
 device_params = {
     'device_type': 'cisco_ios',

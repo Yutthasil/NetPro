@@ -1,0 +1,47 @@
+hostname: R1
+domain: npa.com
+default_gw: 172.31.102.1
+ssh:
+  ssh_version: 2
+  key_bit: 2048
+username: admin
+password: cisco
+route:
+  - target: 0.0.0.0
+    netmask: 0.0.0.0
+    nexthop_router: 172.31.102.1
+interfaces:
+  - intf_type: G0/0
+    intf_des: Connect to G0/2 of S0
+    address: 172.31.102.4
+    netmask: 255.255.255.240
+  - intf_type: G0/1
+    intf_des: Connect to G0/2 of S1
+    address: 172.31.102.17
+    netmask: 255.255.255.240    
+  - intf_type: G0/2
+    intf_des: Connect to G0/1 of R2
+    address: 172.31.102.34
+    netmask: 255.255.255.240    
+  - intf_type: G0/3
+    intf_des: Not Use
+    address: 
+    netmask:
+  - intf_type: lo0
+    intf_des: loopback 0
+    address: 1.1.1.1
+    netmask: 255.255.255.255
+router:
+  ospf:
+    proc_id: 10
+    router_id: 1.1.1.1
+    vrf: control-data
+    networks:
+      - 172.31.102.16 0.0.0.15 area 0
+      - 172.31.102.32 0.0.0.15 area 0
+access_list:
+  - ID: 10
+    rules:
+      - permit 172.31.102.0 0.0.0.15
+      - permit 10.253.190.0 0.0.0.255
+    

@@ -1,0 +1,11 @@
+int {{ interfaces[0]['intf_type'] }}
+description {{ interfaces[0]['intf_des'] }}
+exit
+int {{ interfaces[1]['intf_type'] }}
+description {{ interfaces[1]['intf_des'] }}
+exit
+int {{ interfaces[2]['intf_type'] }}
+description {{ interfaces[2]['intf_des'] }}
+exit
+int {{ interfaces[3]['intf_type'] }}
+description {{ interfaces[3]['intf_des'] }}

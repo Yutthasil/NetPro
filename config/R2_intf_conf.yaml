@@ -1,8 +1,0 @@
-int_type1: G0/0
-int_des1: Connect to G0/3 of S0
-int_type1: G0/1
-int_des1: Connect to G0/2 of R1
-int_type1: G0/2
-int_des1: Connect to G0/1 of R3
-int_type1: G0/3
-int_des1: Not Use

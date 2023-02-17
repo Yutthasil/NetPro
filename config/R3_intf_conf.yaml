@@ -1,8 +1,0 @@
-int_type1: G0/0
-int_des1: Connect to G1/0 of S0
-int_type1: G0/1
-int_des1: Connect to G0/2 of R2
-int_type1: G0/2
-int_des1: Connect to WAN
-int_type1: G0/3
-int_des1: Not Use
