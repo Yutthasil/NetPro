@@ -1,12 +1,10 @@
 from netmiko import *
-from netmikolab import get_ip
-from netmikolab import get_netmask
-from netmikolab import get_des
-from netmikolab import get_status
+from netmikolab import *
 
 devices_ip = ['172.31.102.4', '172.31.102.5', '172.31.102.6']
 username = 'admin'
-pri_key = '/home/devasc/.ssh/id_rsa'
+pri_key = 'id_rsa'
+# pri_key = '/home/devasc/.ssh/id_rsa'
 
 device_params1 = {
     'device_type': 'cisco_ios',

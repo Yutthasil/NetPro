@@ -1,0 +1,13 @@
+hostname {{ hostname }}
+ip domain-name {{ domain }}
+ip default-gateway {{ default_gw }}
+ip ssh version {{ ssh['ssh_version'] }}
+crypto key gen rsa mod {{ ssh['key_bit'] }}
+username {{ username }} privilege 15 password {{ password }}
+line vty 0 4
+login local
+transport input telnet ssh
+ip route {{ route[0]['target'] }} {{ route[0]['netmask'] }} {{ route[0]['nexthop_router'] }}
+int {{ interfaces[0]['intf_type'] }}
+ip addr {{ interfaces[0]['address'] }} {{ interfaces[0]['netmask'] }}
+no shut
